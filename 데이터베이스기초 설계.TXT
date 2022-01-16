@@ -1,0 +1,58 @@
+﻿그룹 고객, 책, 출판사 
+
+고객의 속성: 회원ID, 회원명 if Customer = C , C.cusID  ,   C.cusName , C.cusBirth
+
+CREATE TABLE Customer_Lable ( 
+   CL_name char(10)
+   CL_ID number PrimaryKey
+   CL_birth char(15)
+
+INSERT INTO Customer_Lable VALUES ('김땡땡',5000 , '990101');
+
+(ID가 5000번인 고객의 ID, 이름, 생일 검색)
+Select C.cusID, C.cusName, C.Birth
+
+From CL 
+
+where C.cusID = 5000
+
+책의 속성: 수량, 도서번호, 가격 if Book = B, B.bookName , B.bookCount, B.bookNum, B.bookPrice 
+
+(책 테이블 생성)
+CREATE TABLE Book_Lable ( 
+   BL_bookNum number PrimaryKey 
+   BL_name char(20)
+   BL_bookCount number (수량)
+   BL_bookPrice number NOT NULL;  (공백 불가)
+
+(책 추가)
+INSERT INTO Book_Lable VALUES (1000,'자바의 정석' , 50 ,26000);
+INSERT INTO Book_Lable VALUES (1001,'자바의 정석2' , 1 ,26000);
+
+(자바의 정석 책의 수량 파악)
+Select B.bookCount 
+
+From BL
+
+Where B.bookName = '자바의 정석'
+
+Delete from Book_Lable where BL_bookNum = 1001; (자바의 정석2 삭제)
+
+출판사의 속성: 출판사명 if Publisher = P, P.publisherName
+
+CREATE TABLE Publisher_Lable ( 
+   PL_name Null PrimaryKey
+
+INSERT INTO Publisher_Lable VALUES ('하늘 출판사');
+   
+Select P.Publisher 
+
+From PL 
+
+Where P.Publisher = '하늘 출판사'
+
+
+
+
+
+ 
